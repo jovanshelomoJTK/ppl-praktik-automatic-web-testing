@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="11.343" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Login Functionality" name="Successful Login" time="3.918">
+<system-out><![CDATA[
+Given I am on the Swag Labs login page......................................passed
+When I enter the username "standard_user"...................................passed
+And I enter the password "secret_sauce".....................................passed
+And I click on the login button.............................................passed
+Then I should be taken to the products page.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login Functionality" name="Wrong Password" time="3.743">
+<system-out><![CDATA[
+Given I am on the Swag Labs login page......................................passed
+When I enter the username "standard_user"...................................passed
+And I enter the password "wrong_password"...................................passed
+And I click on the login button.............................................passed
+Then I should see an error message "Epic sadface: Username and password do not match any user in this service".passed
+]]></system-out>
+</testcase>
+<testcase classname="Logout Functionality" name="Successful Logout" time="3.53">
+<system-out><![CDATA[
+Given I am logged in........................................................passed
+When I click on the menu button.............................................passed
+And I click on the logout button............................................passed
+Then I should be logged out.................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
