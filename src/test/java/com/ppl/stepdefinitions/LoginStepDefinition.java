@@ -18,23 +18,23 @@ public class LoginStepDefinition {
         driver = new ChromeDriver();
     }
 
-    @Given("I am on the Swag Labs login page")
-    public void I_am_on_the_Swag_Labs_login_page() {
+    @Given("Pengguna sudah berada pada halaman login")
+    public void Pengguna_sudah_berada_pada_halaman_login() {
         driver.get("https://www.saucedemo.com/");
     }
 
-    @When("I enter the username {string}")
-    public void I_enter_the_username_as_standard_user(String username) {
+    @When("Pengguna memasukan username {string}")
+    public void Pengguna_memasukan_username(String username) {
         driver.findElement(By.id("user-name")).sendKeys(username);
     }
 
-    @And("I enter the password {string}")
-    public void I_enter_the_password_as_secret_sauce(String password) {
+    @And("Pengguna memasukan password {string}")
+    public void Pengguna_memasukan_password(String password) {
         driver.findElement(By.id("password")).sendKeys(password);
     }
 
-    @And("I click on the login button")
-    public void I_click_on_the_login_button() {
+    @And("Pengguna menekan tombol login")
+    public void Pengguna_menekan_tombol_login() {
         driver.findElement(By.id("login-button")).click();
     }
 
@@ -44,8 +44,8 @@ public class LoginStepDefinition {
         assertTrue(url.contains("inventory.html"));
     }
 
-    @Then("I should see an error message {string}")
-    public void I_should_see_an_error_message(String errorMessage) {
+    @Then("Aplikasi menampilkan pesan error {string}")
+    public void Aplikasi_menampilkan_pesan_error(String errorMessage) {
         String actualErrorMessage = driver.findElement(By.cssSelector("[data-test='error']")).getText();
         assertTrue(actualErrorMessage.equals(errorMessage));
     }
