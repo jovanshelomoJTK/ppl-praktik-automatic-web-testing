@@ -5,7 +5,7 @@ Feature: Login Functionality
     When Pengguna memasukan username "standard_user"
     And Pengguna memasukan password "secret_sauce"
     And Pengguna menekan tombol login
-    Then I should be taken to the products page
+    Then Aplikasi menampilkan halaman dashboard
 
   Scenario: Login dengan username yang terdaftar dan password tidak sesuai
     Given Pengguna sudah berada pada halaman login

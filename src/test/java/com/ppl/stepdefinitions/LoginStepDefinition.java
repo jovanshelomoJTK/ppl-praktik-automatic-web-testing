@@ -38,8 +38,8 @@ public class LoginStepDefinition {
         driver.findElement(By.id("login-button")).click();
     }
 
-    @Then("I should be taken to the products page")
-    public void I_should_be_taken_to_the_products_page() {
+    @Then("Aplikasi menampilkan halaman dashboard")
+    public void Aplikasi_menampilkan_halaman_dashboard() {
         String url = driver.getCurrentUrl();
         assertTrue(url.contains("inventory.html"));
     }
