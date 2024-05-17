@@ -1,15 +1,28 @@
 Feature: Login Functionality
 
-  Scenario: Successful Login
-    Given I am on the Swag Labs login page
-    When I enter the username "standard_user"
-    And I enter the password "secret_sauce"
-    And I click on the login button
-    Then I should be taken to the products page
+  Scenario: Login dengan username dan password yang terdaftar pada sistem
+    Given Pengguna sudah berada pada halaman login
+    When Pengguna memasukan username "standard_user"
+    And Pengguna memasukan password "secret_sauce"
+    And Pengguna menekan tombol login
+    Then Aplikasi menampilkan halaman dashboard
 
-  Scenario: Wrong Password
-    Given I am on the Swag Labs login page
-    When I enter the username "standard_user"
-    And I enter the password "wrong_password"
-    And I click on the login button
-    Then I should see an error message "Epic sadface: Username and password do not match any user in this service"
+  Scenario: Login dengan username yang terdaftar dan password tidak sesuai
+    Given Pengguna sudah berada pada halaman login
+    When Pengguna memasukan username "standard_user"
+    And Pengguna memasukan password "wrong_password"
+    And Pengguna menekan tombol login
+    Then Aplikasi menampilkan pesan error "Username and password do not match any user in this service !"
+  
+  Scenario: Login dengan username yang tidak terdaftar
+    Given Pengguna sudah berada pada halaman login
+    When Pengguna memasukan username "customer"
+    And Pengguna memasukan password "secret_sauce"
+    And Pengguna menekan tombol login
+    Then Aplikasi menampilkan pesan error "Username and password do not match any user in this service !"
+  
+  Scenario: Login dengan username tidak terisi dan password terisi
+    Given Pengguna sudah berada pada halaman login
+    When Pengguna memasukan password "secret_sauce"
+    And Pengguna menekan tombol login
+    Then Aplikasi menampilkan pesan error "You need Username !"

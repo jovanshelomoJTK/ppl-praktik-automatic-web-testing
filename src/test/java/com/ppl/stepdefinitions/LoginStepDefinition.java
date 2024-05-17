@@ -1,22 +1,14 @@
 package com.ppl.stepdefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.ppl.Hooks;
 
 public class LoginStepDefinition {
-    private WebDriver driver;
-
-    @Before
-    public void initializeDriver() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
+    private WebDriver driver = Hooks.driver;
 
     @Given("Pengguna sudah berada pada halaman login")
     public void Pengguna_sudah_berada_pada_halaman_login() {
@@ -48,10 +40,5 @@ public class LoginStepDefinition {
     public void Aplikasi_menampilkan_pesan_error(String errorMessage) {
         String actualErrorMessage = driver.findElement(By.cssSelector("[data-test='error']")).getText();
         assertTrue(actualErrorMessage.equals(errorMessage));
-    }
-
-    @After
-    public void closeBrowser() {
-        driver.quit();
     }
 }

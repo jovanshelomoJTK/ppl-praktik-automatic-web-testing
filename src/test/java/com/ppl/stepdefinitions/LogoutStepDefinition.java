@@ -2,6 +2,7 @@ package com.ppl.stepdefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -9,20 +10,18 @@ import java.time.Duration;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LogoutStepDefinition {
-    private WebDriver driver;
+import com.ppl.Hooks;
 
-    @Before
-    public void initializeDriver() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
+public class LogoutStepDefinition {
+    private WebDriver driver = Hooks.driver;
 
     @Given("Pengguna sudah login dengan berhasil")
     public void Pengguna_sudah_login_dengan_berhasil() {
+        WebDriver driver = Hooks.driver;
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
@@ -46,8 +45,4 @@ public class LogoutStepDefinition {
         assertTrue(driver.findElement(By.cssSelector("[data-test='login-container']")).isDisplayed());
     }
 
-    @After
-    public void closeBrowser() {
-        driver.quit();
-    }
 }
