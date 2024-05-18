@@ -1,0 +1,5 @@
+com\ppl\stepdefinitions\LoginStepDefinition.class
+com\ppl\hooks\Hooks.class
+com\ppl\pages\LogoutPage.class
+com\ppl\stepdefinitions\LogoutStepDefinition.class
+com\ppl\pages\LoginPage.class
