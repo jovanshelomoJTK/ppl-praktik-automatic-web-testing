@@ -4,7 +4,7 @@ import io.cucumber.java.en.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.openqa.selenium.WebDriver;
 
-import com.ppl.Hooks;
+import com.ppl.hooks.Hooks;
 import com.ppl.pages.LoginPage;
 
 public class LoginStepDefinition {

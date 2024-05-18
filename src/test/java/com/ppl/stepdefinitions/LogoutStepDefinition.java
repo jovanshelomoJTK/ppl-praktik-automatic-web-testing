@@ -3,12 +3,9 @@ package com.ppl.stepdefinitions;
 import io.cucumber.java.en.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.ppl.Hooks;
+import com.ppl.hooks.Hooks;
 import com.ppl.pages.LoginPage;
 import com.ppl.pages.LogoutPage;
 

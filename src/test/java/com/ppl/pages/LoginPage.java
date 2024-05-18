@@ -1,6 +1,5 @@
 package com.ppl.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +25,9 @@ public class LoginPage {
     @FindBy(css = "[data-test='error']")
     private WebElement errorMessage;
 
+    @FindBy(css = "[data-test='login-container']")
+    private WebElement loginContainer;
+
     public void enterUsername(String username) {
         usernameField.sendKeys(username);
     }
@@ -43,6 +45,6 @@ public class LoginPage {
     }
 
     public boolean checkIsLoginPage() {
-        return driver.findElement(By.cssSelector("[data-test='login-container']")).isDisplayed();
+        return loginContainer.isDisplayed();
     }
 }
