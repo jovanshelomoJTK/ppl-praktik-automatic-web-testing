@@ -1,0 +1,5 @@
+# Created at 2024-05-19T09:57:57.999
+Boot Manifest-JAR contains absolute paths in classpath 'D:\SEM6\PPL\W12\ppl-praktik-automatic-web-testing\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
