@@ -44,9 +44,8 @@ mvn test
 ## File Configuration
 Proses konfigurasi project menggunakan build automation pada file pom.xml
 1. Semua dependency yang dibutuhkan harus ditambahkan di dalam dependencies pada pom.xml. Berikut dependency yang dibutuhkan:
+   
 a. webdrivermanager, menyediakan utilitas untuk mengelola driver browser otomatis
-
-
    ```
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -54,40 +53,34 @@ a. webdrivermanager, menyediakan utilitas untuk mengelola driver browser otomati
             <version>5.8.0</version>
         </dependency>
 
-
    ```
  	b. selenium-java, menyediakan API untuk mengotomatisasi browser
-```
+   ```
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.20.0</version>
         </dependency>
 
-
-```
+   ```
 c. cucumber-java, menyediakan integrasi Java untuk Cucumber
-```    
+   ```    
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <scope>test</scope>
         </dependency>
 
-
-```
-
-
+   ```
 d. cucumber-junit-platform-engine, menyediakan integrasi dengan JUnit Platform
-```
+   ```
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
             <scope>test</scope>
         </dependency>
 
-
-```
+   ```
 e. junit-platform-suite, menyediakan kerangka kerja untuk menjalankan pengujian dengan JUnit Platform
 ```
         <dependency>
@@ -105,12 +98,7 @@ f. junit-jupiter, menyediakan API dan implementasi untuk JUnit Jupiter, bagian d
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
-
-
 ```
-
-
-
 
 2. Tambahkan plugin yang dibutuhkan dalam plugins pada pom.xml. Berikut plugin yang dibutuhkan:
 
@@ -122,6 +110,4 @@ a. maven-surefire-plugin, plugin untuk menjalankan unit test menggunakan Surefir
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M8</version>
             </plugin>
-
-
 ```
