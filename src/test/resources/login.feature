@@ -26,3 +26,14 @@ Feature: Login Functionality
     When Pengguna memasukan password "secret_sauce"
     And Pengguna menekan tombol login
     Then Aplikasi menampilkan pesan error "You need Username !"
+
+  Scenario: Login dengan username terisi dan password tidak terisi
+    Given Pengguna sudah berada pada halaman login
+    When Pengguna memasukan username "standard_user"
+    And Pengguna menekan tombol login
+    Then Aplikasi menampilkan pesan error "You need Password !"
+
+  Scenario: Login dengan username dan password tidak terisi
+    Given Pengguna sudah berada pada halaman login
+    When Pengguna menekan tombol login
+    Then Aplikasi menampilkan pesan error "You need Username & Password !"
