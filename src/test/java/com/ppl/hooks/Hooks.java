@@ -5,15 +5,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
     public static ChromeDriver driver;
 
+    @BeforeAll
+    public void setupDriver() {
+        WebDriverManager.chromedriver().setup();
+    }
+
     @Before
     public void initializeDriver() {
-        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
 
